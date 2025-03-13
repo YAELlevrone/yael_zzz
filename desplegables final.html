@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUSIFY</title>
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+    <script>
+        function redirigirFormulario(plan) {
+            window.location.href = 'formulario_planes.html?plan=' + plan;
+        }
+        function redirigirEventos() {
+            document.getElementById('seccion-eventos').scrollIntoView({ behavior: 'smooth' });
+        }
+        function abrirTicketmaster() {
+            window.location.href = 'https://www.ticketmaster.com.mx/';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="1erzz.png" alt="Logotipo" width="100">
+        <h1>MUSIFY</h1>
+    </header>
+
+    <nav>
+        <select id="menu" onchange="
+            if (this.value.startsWith('plan-')) {
+                redirigirFormulario(this.value.replace('plan-', ''));
+            } else if (this.value.startsWith('evento-')) {
+                redirigirEventos();
+            }">
+            <option value="" disabled selected>Menú</option>
+        
+            </optgroup>
+            <optgroup label="Eventos">
+                <option value="evento-mexico">México</option>
+                <option value="evento-canada">Canadá</option>
+                <option value="evento-espana">España</option>
+                <option value="evento-inglaterra">Inglaterra</option>
+            </optgroup>
+        </select>
+    </nav>
+
+    <button onclick="location.href='#informacion'">informacion</button>
+    <button onclick="location.href='#contacto'">contacto</button>
+    <button onclick="location.href='#redes'">redes</button>
+    <button onclick="location.href='#descripcion'">descripcion</button>
+    <button onclick="location.href='#registro'">Registro y contratacion de plan</button>
+
+    <section id="descripcion">
+        <h2>LA MEJOR MUSICA</h2>
+        <p>Esta página está dedicada a la mejor música ¡la mejor biblioteca musical!</p>
+    </section>
+
+    <section>
+        <h2>artistas favoritos</h2>
+        <p>La música es muy importante porque transmite emociones, ideas, pensamientos y de todo. Entre mis artistas favoritos está "I Don't Like Mirrors", entre otros.</p>
+        <img src="i dont.jpg" alt="Descripción de la imagen" width="300">
+    </section>
+
+    <section>
+        <h2>Video sobre el Tema</h2>
+        <p>Te invito a ver este video para conocer más sobre el tema.</p>
+        <video width="400" controls>
+            <source src="video.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+        </video>
+    </section>
+
+    <section id="contacto">
+        <h2>MUSIFY</h2>
+        <p>Nombre: Yael Clemente</p>
+        <p>Correo: yaellevrone@gmail.com</p>
+    </section>
+
+    <section id="redes">
+        <h2>Redes Sociales</h2>
+        <p><a href="https://facebook.com" target="_blank">Facebook</a></p>
+        <p><a href="https://instagram.com" target="_blank">Instagram</a></p>
+        <p><a href="https://youtube.com" target="_blank">YouTube</a></p>
+    </section>
+
+    <section>
+        <h2>Escucha un Podcast</h2>
+        <audio controls>
+            <source src="podcast.mp3" type="audio/mpeg">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+    </section>
+
+    <!-- Tabla de Artistas, Planes, Costos, Membresías y Eventos -->
+    <section id="informacion">
+        <h2>Información Adicional</h2>
+        <table border="1">
+            <tr>
+                <th style="background-color: #ff9999;">Artistas</th>
+                <th style="background-color: #99ccff;">Planes</th>
+                <th style="background-color: #99ff99;">Costos</th>
+                <th style="background-color: #ffcc99;">Membresías</th>
+                <th style="background-color: #cc99ff;">Eventos</th>
+            </tr>
+            <tr>
+                <td style="background-color: #ffcccc;">current joys</td>
+                <td style="background-color: #cce6ff;">Plan Básico</td>
+                <td style="background-color: #ccffcc;">$100</td>
+                <td style="background-color: #ffe0b3;">Mensual</td>
+                <td style="background-color: #dab3ff;">	mexico</td>
+            </tr>
+            <tr>
+                <td style="background-color: #ffcccc;">sign crushes motorist</td>
+                <td style="background-color: #cce6ff;">Plan Premium</td>
+                <td style="background-color: #ccffcc;">$200</td>
+                <td style="background-color: #ffe0b3;">Mensual</td>
+                <td style="background-color: #dab3ff;">	canada</td>
+            </tr>
+            <tr>
+                <td style="background-color: #ffcccc;">i dont like mirrors</td>
+                <td style="background-color: #cce6ff;">Plan VIP</td>
+                <td style="background-color: #ccffcc;">$300</td>
+                <td style="background-color: #ffe0b3;">Mensual</td>
+                <td style="background-color: #dab3ff;">españa</td>
+            </tr>
+            <tr>
+                <td style="background-color: #ffcccc;">birth day</td>
+                <td style="background-color: #cce6ff;">Plan Estudiante</td>
+                <td style="background-color: #ccffcc;">$125</td>
+                <td style="background-color: #ffe0b3;">Mensual</td>
+                <td style="background-color: #dab3ff;">	inglaterra</td>
+            </tr>
+            <tr>
+
+
+        </table>
+    </section>
+
+
+    <section id="registro">
+        <h2>Registro</h2>
+        <form>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre"><br><br>
+
+            <label for="nacimiento">Año de nacimiento:</label>
+            <input type="text" id="nacimiento" name="nacimiento"><br><br>
+
+            <label for="direccion">País:</label>
+            <input type="text" id="direccion" name="direccion"><br><br>
+
+            <label>Sexo:</label>
+            <input type="radio" name="sexo" value="hombre"> Hombre
+            <input type="radio" name="sexo" value="mujer"> Mujer<br><br>
+
+            <label>Plan a contratar:</label>
+            <input type="radio" name="plan" value="basico"> Básico
+            <input type="radio" name="plan" value="premium"> Premium
+            <input type="radio" name="plan" value="VIP"> VIP
+            <input type="radio" name="plan" value="estudiante"> Estudiante
+            <br><br>
+
+            <button type="submit">Enviar</button>
+            <button type="reset">Borrar</button>
+        </form>
+    </section>
+    <section id="seccion-eventos">
+        <h2>Eventos Disponibles</h2>
+        <button onclick="abrirTicketmaster()">Eventos Disponibles</button>
+    </section>
+</body>
+</html>
